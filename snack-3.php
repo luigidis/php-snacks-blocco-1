@@ -47,27 +47,23 @@ $posts = [
 
 
 
-<?php 
-    foreach($posts as $posts_key => $posts_value) {
-            var_dump($posts_key);
-            var_dump($posts_value);
-            $post_date = $posts_key;
-            
-           for ($i = 0; $i < count($posts_value); $i++) {
-            $posts_value[$i] = $value;
-            var_dump($value);
-            var_dump($post_date);
-            
-?>     
-        <!-- <div> -->
-            <?php 
-                // echo "{$posts_key} - {$value['title']} - {$value['author']} - {$value['text']}";
-            ?>
-        <!-- </div>  -->
-    
-        <?php
-        }   
-    }
+<?php
+foreach ($posts as $posts_key => $posts_value) {
+    // var_dump($posts_key); //stampa la data
+    // var_dump($posts_value); //stampa i post realtivi alla data
+    $post_date = $posts_key; // assegna diversa variabile alla data
+
+    for ($i = 0; $i < count($posts_value); $i++) {
+        // var_dump($posts_value[$i]); //Stampa il post relativo all'indice
+        // var_dump($post_date); // stampa la data
+        $value = $posts_value[$i];
 ?>
-
-
+        <div>
+            <?php
+            echo "{$post_date} - {$value['title']} - {$value['author']} - {$value['text']}";
+            ?>
+        </div>
+<?php
+    }
+}
+?>
